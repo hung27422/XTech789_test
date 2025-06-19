@@ -1,0 +1,15 @@
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+function SearchBar() {
+  return (
+    <div className="flex items-center justify-between border border-gray-400 rounded-md text-black">
+      <input className="w-3xl outline-0 p-4 " type="text" placeholder="Search for product" />
+      <div className="border-l border-gray-400 py-4 px-8 cursor-pointer hover:bg-gray-200">
+        <FontAwesomeIcon className="size-7 text-lg" icon={faMagnifyingGlass} />
+      </div>
+    </div>
+  );
+}
+
+export default SearchBar;
