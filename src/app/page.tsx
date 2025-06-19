@@ -1,5 +1,6 @@
 "use client";
 import Categories from "@/components/layouts/categories";
+import AwardSlider from "@/components/ui/AwardSlider";
 import BannerSlider from "@/components/ui/BannerSlider";
 import MarketingCards from "@/components/ui/MarketingCards";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -94,10 +95,32 @@ export default function Home() {
           <span className="text-red-600">ageLOC® LumiSpa® iO</span>
           <span className="text-3xl font-semibold my-2">ageLOC® LumiSpa® iO</span>
           <p className="text-lg mt-4">Elevate your skincare routine</p>
-          <div className="bg-primary text-xl font-semibold px-4 py-2 text-white mt-8 cursor-pointer hover:opacity-90 transition-opacity">
+          <div className="bg-primary text-white text-xl font-semibold px-6 py-3 rounded-md mt-8 cursor-pointer transition-colors hover:!bg-amber-500">
             SHOP NOW
           </div>
         </div>
+      </div>
+      <div>
+        <SectionTitle title="Award And Recognition" />
+      </div>
+      <div className="bg-[#f3f2ee] p-4 rounded-md">
+        <div className="w-[60%] mx-auto relative">
+          <Image
+            src="https://media.nuskin.com/m/1c720b25d221013b/Small--1-banner-webhomepage.jpg"
+            width={1200}
+            height={400}
+            alt="Award and Recognition"
+            className="w-full h-auto object-cover rounded-md"
+          />
+          <div className="absolute flex flex-col items-center justify-center top-0 right-30 z-10 p-1 rounded pt-4">
+            <span className="text-gray-500 font-semibold">WORLD&apos;S #1 COMPANY FOR</span>
+            <span className="text-xl font-bold">Beauty & Wellness Device Systems</span>
+            <span className="text-sm text-gray-600">Source: Euromonitor</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <AwardSlider />
       </div>
     </div>
   );
