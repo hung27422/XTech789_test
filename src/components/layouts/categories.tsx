@@ -14,7 +14,7 @@ const categories = [
   { id: 10, name: "Shoes" },
 ];
 
-function SideBar() {
+function Categories() {
   return (
     <div className="text-center h-full w-full">
       <div className="text-white bg-primary rounded-t-md">
@@ -37,4 +37,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default Categories;

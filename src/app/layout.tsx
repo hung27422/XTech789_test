@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layouts/footer";
-import SideBar from "@/components/layouts/sidebar";
 import TopHeader from "@/components/layouts/header/TopHeader";
 import MiddleHeader from "@/components/layouts/header/MiddleHeader";
 import MainHeader from "@/components/layouts/header/MainHeader";
@@ -35,8 +34,8 @@ export default function RootLayout({
             <TopHeader />
           </header>
           <div className="">
-            <main className="">
-              <div className="grid grid-cols-12 gap-6 px-10 w-full">
+            <main className="px-10">
+              <div className="grid grid-cols-12 gap-6 w-full">
                 <div className="col-span-3 w-full"></div>
                 <div className="col-span-9 w-full">
                   <MiddleHeader />
