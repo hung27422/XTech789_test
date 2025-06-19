@@ -18,7 +18,7 @@ export default function AwardSlider() {
   return (
     <>
       <Swiper
-        slidesPerView={6}
+        slidesPerView={5}
         spaceBetween={30}
         freeMode={true}
         pagination={{

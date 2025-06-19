@@ -45,7 +45,7 @@ export default function RootLayout({
               <div>{children}</div>
             </main>
           </div>
-          <footer className="bg-gray-800 text-white p-4 mt-4 w-full">
+          <footer className="bg-primary text-white mt-4 w-full">
             <Footer />
           </footer>
         </div>
