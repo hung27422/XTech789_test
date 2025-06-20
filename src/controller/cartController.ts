@@ -1,5 +1,5 @@
-import { Cart } from "@/types/Cart";
-import { Product } from "@/types/Product";
+import { Cart } from "@/models/Cart";
+import { Product } from "@/models/Product";
 
 // Thêm giỏ hàng
 export function addToCart(prevCart: Cart[], product: Product): Cart[] {

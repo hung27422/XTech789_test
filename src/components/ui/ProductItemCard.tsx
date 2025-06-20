@@ -1,5 +1,5 @@
 import { useAppContext } from "@/context/AppContextProvider";
-import { Product } from "@/types/Product";
+import { Product } from "@/models/Product";
 import Image from "next/image";
 import useSnackbar from "../hooks/components/useSnackbar";
 import { addToCart } from "@/controller/cartController";

@@ -1,5 +1,5 @@
 "use client";
-import { Cart } from "@/types/Cart";
+import { Cart } from "@/models/Cart";
 // AppContext.tsx
 import { createContext, useContext, useState } from "react";
 

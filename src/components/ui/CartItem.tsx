@@ -1,6 +1,6 @@
 import { useAppContext } from "@/context/AppContextProvider";
 import { removeFromCart } from "@/controller/cartController";
-import { Cart } from "@/types/Cart";
+import { Cart } from "@/models/Cart";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
