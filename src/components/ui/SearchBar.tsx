@@ -1,3 +1,4 @@
+import { createSearchUrl } from "@/controller/searchController";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import { useState } from "react";
 
 function SearchBar() {
   const [valueSearch, setValueSearch] = useState("");
+  const searchUrl = createSearchUrl(valueSearch);
   return (
     <div className="flex items-center justify-between border border-gray-400 rounded-md text-black">
       <input
@@ -14,10 +16,12 @@ function SearchBar() {
         onChange={(e) => setValueSearch(e.target.value)}
       />
       <Link
-        href={`/detail/${valueSearch}`}
-        className="border-l border-gray-400 py-2 px-2 md:py-4 md:px-8 cursor-pointer hover:bg-gray-200"
+        href={searchUrl}
+        className={`border-l border-gray-400 py-2 px-4 md:py-4 md:px-8 hover:bg-gray-200 ${
+          valueSearch.trim() === "" && "pointer-events-none opacity-50"
+        }`}
       >
-        <FontAwesomeIcon className="size-7 text-lg" icon={faMagnifyingGlass} />
+        <FontAwesomeIcon icon={faMagnifyingGlass} className="text-lg" />
       </Link>
     </div>
   );

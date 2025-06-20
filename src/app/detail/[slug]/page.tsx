@@ -6,7 +6,7 @@ function DetailProduct({ params }: { params: { slug: string } }) {
       <div className="col-span-3 hidden lg:block">
         <Categories />
       </div>
-      <div className="col-span-9 flex items-center justify-center mx-auto mt-2">
+      <div className="col-span-9  mt-2">
         <textarea value={params.slug} readOnly className="border-2 border-gray-300 w-full h-full" />
       </div>
     </div>

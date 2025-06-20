@@ -1,4 +1,5 @@
 import { useAppContext } from "@/context/AppContextProvider";
+import { removeFromCart } from "@/controller/cartController";
 import { Cart } from "@/types/Cart";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +11,7 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ dataCart }: CartItemProps) => {
   const { setDataCart } = useAppContext();
   const handleRemoveCart = () => {
-    setDataCart((prev) => prev.filter((item) => item.nameProduct !== dataCart.nameProduct));
+    setDataCart((prev) => removeFromCart(prev, dataCart.nameProduct));
   };
   return (
     <div className="flex items-center justify-between border-gray-400 border p-1 rounded-md px-2 my-2">
@@ -35,7 +36,7 @@ const CartItem: React.FC<CartItemProps> = ({ dataCart }: CartItemProps) => {
         <div></div>
       </div>
       <div onClick={handleRemoveCart} className="mr-4 hover:text-red-500">
-        <FontAwesomeIcon icon={faTrash} className="cursor-pointer text-black " />
+        <FontAwesomeIcon icon={faTrash} className="cursor-pointer text-black hover:text-red-500 " />
       </div>
     </div>
   );

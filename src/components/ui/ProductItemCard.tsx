@@ -2,6 +2,7 @@ import { useAppContext } from "@/context/AppContextProvider";
 import { Product } from "@/types/Product";
 import Image from "next/image";
 import useSnackbar from "../hooks/components/useSnackbar";
+import { addToCart } from "@/controller/cartController";
 
 interface ProductItemCardProps {
   product: Product;
@@ -9,27 +10,10 @@ interface ProductItemCardProps {
 function ProductItemCard({ product }: ProductItemCardProps) {
   const { setDataCart } = useAppContext();
   const { showSnackbar } = useSnackbar();
+
   const handleAddToCart = () => {
     showSnackbar("Thêm giỏ hàng thành công", "success");
-    setDataCart((prev) => {
-      const existing = prev.find((item) => item.nameProduct === product.name);
-      if (existing) {
-        return prev.map((item) =>
-          item.nameProduct === product.name ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      } else {
-        return [
-          ...prev,
-          {
-            nameProduct: product.name,
-            quantity: 1,
-            imageProduct: product.imageUrl,
-            priceProduct: product.price,
-            priceOldProduct: product.priceOld,
-          },
-        ];
-      }
-    });
+    setDataCart((prev) => addToCart(prev, product));
   };
 
   return (
