@@ -8,45 +8,49 @@ import NuSkinWay from "@/components/pages/home/NuSkinWay";
 import AwardSlider from "@/components/ui/AwardSlider";
 import BannerSlider from "@/components/ui/BannerSlider";
 import SectionTitle from "@/components/ui/SectionTitle";
-
+import { SnackbarProvider } from "notistack";
 export default function Home() {
   return (
-    <div className="min-h-screen h-full">
-      {/* Header của trang chủ */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
-        <div className="col-span-3 w-full hidden lg:block">
-          <Categories />
+    <div>
+      <SnackbarProvider maxSnack={3} autoHideDuration={3000}>
+        <div className="min-h-screen h-full">
+          {/* Header của trang chủ */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+            <div className="col-span-3 w-full hidden lg:block">
+              <Categories />
+            </div>
+            <div className="col-span-1 md:col-span-9 w-full">
+              <BannerSlider />
+              <HeroDoubleCard />
+            </div>
+          </div>
+
+          {/* Phần sản phẩm phổ biến */}
+          <div>
+            <SectionTitle title="Most Popular Products" />
+            <MostPopularSection />
+          </div>
+
+          {/* Giải thưởng và chứng nhận */}
+          <div>
+            <SectionTitle title="Award And Recognition" />
+            <AwardsBanner />
+            <AwardSlider />
+          </div>
+
+          {/* Phần Nu Skin Way */}
+          <div>
+            <SectionTitle title="The Nu Skin Way" />
+            <NuSkinWay />
+          </div>
+
+          {/* Tin tức NuSkin */}
+          <div>
+            <SectionTitle title="Nu Skin In The News" />
+            <NewsSection />
+          </div>
         </div>
-        <div className="col-span-1 md:col-span-9 w-full">
-          <BannerSlider />
-          <HeroDoubleCard />
-        </div>
-      </div>
-
-      {/* Phần sản phẩm phổ biến */}
-      <div>
-        <SectionTitle title="Most Popular Products" />
-        <MostPopularSection />
-      </div>
-
-      {/* Giải thưởng và chứng nhận */}
-      <div>
-        <SectionTitle title="Award And Recognition" />
-        <AwardsBanner />
-        <AwardSlider />
-      </div>
-
-      {/* Phần Nu Skin Way */}
-      <div>
-        <SectionTitle title="The Nu Skin Way" />
-        <NuSkinWay />
-      </div>
-
-      {/* Tin tức NuSkin */}
-      <div>
-        <SectionTitle title="Nu Skin In The News" />
-        <NewsSection />
-      </div>
+      </SnackbarProvider>
     </div>
   );
 }

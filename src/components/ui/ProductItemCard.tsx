@@ -1,17 +1,37 @@
+import { useAppContext } from "@/context/AppContextProvider";
+import { Product } from "@/types/Product";
 import Image from "next/image";
+import useSnackbar from "../hooks/components/useSnackbar";
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  priceOld: number;
-  description: string;
-  imageUrl: string;
-}
 interface ProductItemCardProps {
   product: Product;
 }
 function ProductItemCard({ product }: ProductItemCardProps) {
+  const { setDataCart } = useAppContext();
+  const { showSnackbar } = useSnackbar();
+  const handleAddToCart = () => {
+    showSnackbar("Thêm giỏ hàng thành công", "success");
+    setDataCart((prev) => {
+      const existing = prev.find((item) => item.nameProduct === product.name);
+      if (existing) {
+        return prev.map((item) =>
+          item.nameProduct === product.name ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [
+          ...prev,
+          {
+            nameProduct: product.name,
+            quantity: 1,
+            imageProduct: product.imageUrl,
+            priceProduct: product.price,
+            priceOldProduct: product.priceOld,
+          },
+        ];
+      }
+    });
+  };
+
   return (
     <div className="flex flex-col items-center justify-center gap-2 h-auto w-[200px] lg:w-[250px] mx-auto shadow-md">
       <div className="bg-white relative overflow-hidden h-[200px] lg:h-[300px] w-[200px] lg:w-[250px]">
@@ -28,7 +48,10 @@ function ProductItemCard({ product }: ProductItemCardProps) {
         </div>
       </div>
       <div className="w-full hover:opacity-90 cursor-pointer transition-opacity">
-        <button className="bg-primary text-white px-4 py-2 cursor-pointer w-full">
+        <button
+          onClick={handleAddToCart}
+          className="bg-primary text-white px-4 py-2 cursor-pointer w-full"
+        >
           Add To Cart
         </button>
       </div>

@@ -5,6 +5,7 @@ import Footer from "@/components/layouts/footer";
 import TopHeader from "@/components/layouts/header/TopHeader";
 import MiddleHeader from "@/components/layouts/header/MiddleHeader";
 import MainHeader from "@/components/layouts/header/MainHeader";
+import { AppContextProvider } from "@/context/AppContextProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,26 +30,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div>
-          <header className="bg-primary text-white p-4 w-full">
-            <TopHeader />
-          </header>
-          <div className="">
-            <main className="lg:px-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-6 w-full">
-                <div className="col-span-3 w-full"></div>
-                <div className="col-span-9 w-full">
-                  <MiddleHeader />
-                  <MainHeader />
+        <AppContextProvider>
+          <div>
+            <header className="bg-primary text-white p-4 w-full">
+              <TopHeader />
+            </header>
+            <div className="">
+              <main className="lg:px-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-6 w-full">
+                  <div className="col-span-3 w-full"></div>
+                  <div className="col-span-9 w-full">
+                    <MiddleHeader />
+                    <MainHeader />
+                  </div>
                 </div>
-              </div>
-              <div>{children}</div>
-            </main>
+                <div>{children}</div>
+              </main>
+            </div>
+            <footer className="bg-primary text-white mt-4 w-full">
+              <Footer />
+            </footer>
           </div>
-          <footer className="bg-primary text-white mt-4 w-full">
-            <Footer />
-          </footer>
-        </div>
+        </AppContextProvider>
       </body>
     </html>
   );
