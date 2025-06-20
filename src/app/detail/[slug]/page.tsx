@@ -1,13 +1,10 @@
 import Categories from "@/components/layouts/categories";
 
 interface DetailProductProps {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }
 
-// ✅ Phải là async function (dù bạn không cần fetch gì cả)
-const DetailProduct = async ({ params }: DetailProductProps) => {
+function DetailProduct({ params }: DetailProductProps) {
   return (
     <div className="grid grid-cols-12 gap-6">
       <div className="col-span-3 hidden lg:block">
@@ -18,6 +15,6 @@ const DetailProduct = async ({ params }: DetailProductProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default DetailProduct;
