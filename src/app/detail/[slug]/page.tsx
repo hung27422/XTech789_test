@@ -1,6 +1,11 @@
 import Categories from "@/components/layouts/categories";
 
-function DetailProduct({ params }: { params: { slug: string } }) {
+interface DetailProductProps {
+  params: {
+    slug: string;
+  };
+}
+function DetailProduct({ params }: DetailProductProps) {
   return (
     <div className="grid grid-cols-12 gap-6">
       <div className="col-span-3 hidden lg:block">
