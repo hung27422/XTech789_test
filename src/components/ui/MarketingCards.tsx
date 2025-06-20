@@ -7,7 +7,7 @@ interface MarketingCardsProps {
 }
 function MarketingCards({ imageUrl, subtitle, title }: MarketingCardsProps) {
   return (
-    <div className="relative w-full h-52 overflow-hidden">
+    <div className="relative w-full h-44 md:h-52 overflow-hidden">
       <Image
         src={imageUrl || ""}
         alt="Marketing-Card"

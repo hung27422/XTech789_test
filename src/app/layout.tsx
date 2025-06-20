@@ -34,8 +34,8 @@ export default function RootLayout({
             <TopHeader />
           </header>
           <div className="">
-            <main className="px-10">
-              <div className="grid grid-cols-12 gap-6 w-full">
+            <main className="lg:px-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-6 w-full">
                 <div className="col-span-3 w-full"></div>
                 <div className="col-span-9 w-full">
                   <MiddleHeader />

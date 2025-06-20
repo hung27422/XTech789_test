@@ -41,8 +41,8 @@ const atms = [
 function Footer() {
   return (
     <div className="bg-primary">
-      <div className=" grid grid-cols-4 gap-10 border-b-2 border-gray-200 px-10 py-10">
-        <div className="col-span-1">
+      <div className=" grid grid-cols-1 md:grid-cols-4 gap-10 border-b-2 border-gray-200 px-10 py-10">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, ut voluptatibus rerum
           </p>
@@ -67,7 +67,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="col-span-1 mx-auto">
+        <div className="col-span-1 lg:mx-auto">
           <p>Quick Links</p>
           <ul>
             <li className="flex gap-3 my-2">
@@ -108,7 +108,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="col-span-1 mx-auto">
+        <div className="col-span-1 lg:mx-auto">
           <p>Quick Links</p>
           <ul>
             <li className="flex gap-3 my-2">
@@ -150,18 +150,22 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="px-10 py-5 flex items-center justify-between">
+      <div className="px-10 py-5 flex flex-col lg:flex-row items-center justify-between">
         <div>
           <div className="flex items-center">
             <span className="mr-4">
               <FontAwesomeIcon className="text-lg" icon={faCopyright} />
             </span>
-            <span className="font-bold">Your Site Name</span>. All rights Reserved. Designed by
-            <span className="font-bold ml-1"> HTML Codex</span>
+            <div>
+              <p>
+                <span className="font-bold">Your Site Name</span> . All rights Reserved. Designed by
+                <span className="font-bold"> HTML Codex</span>
+              </p>
+            </div>
           </div>
-          <div>Distributed By ThemeWagon</div>
+          <div className="text-center my-2">Distributed By ThemeWagon</div>
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="grid grid-cols-6 gap-2">
           {atms.map((item) => (
             <Image
               key={item.id}
@@ -169,7 +173,7 @@ function Footer() {
               alt="img-atm"
               width={60}
               height={40}
-              className="bg-white px-4 py-2 w-20 h-10"
+              className="col-span-1 bg-white px-4 py-2 h-8  md:h-10"
             />
           ))}
         </div>

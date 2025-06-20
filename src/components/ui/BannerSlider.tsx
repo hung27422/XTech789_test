@@ -41,7 +41,7 @@ export default function BannerSlider() {
             <Image
               src={image.src}
               alt="img"
-              className="h-[530px] w-full object-cover"
+              className="h-[300px] md:h-[530px] w-full object-cover"
               width={1920}
               height={500}
             />

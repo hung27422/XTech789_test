@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const menus = [
+export const menuHeaders = [
   { id: "1", name: "Home", path: "/", icon: "" },
   {
     id: "2",
@@ -27,12 +27,11 @@ const menus = [
 ];
 function MainHeader() {
   const pathName = usePathname();
-  console.log({ pathName });
 
   return (
-    <div className="flex item-cen justify-between h-20">
+    <div className="lg:flex item-cen justify-between h-20 hidden">
       <div className="flex items-center gap-2 text-xl font-semibold">
-        {menus.map((menu) => (
+        {menuHeaders.map((menu) => (
           <Link
             key={menu.id}
             href={menu.path}
@@ -45,9 +44,9 @@ function MainHeader() {
           </Link>
         ))}
       </div>
-      <div className="flex items-center gap-6 text-lg font-semibold">
-        <span>Login</span>
-        <span>Register</span>
+      <div className="flex items-center gap-6 text-lg font-semibold cursor-pointer">
+        <span className="hover:underline">Login</span>
+        <span className="hover:underline">Register</span>
       </div>
     </div>
   );

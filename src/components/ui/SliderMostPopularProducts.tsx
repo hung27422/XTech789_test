@@ -23,6 +23,20 @@ export default function SliderMostPopularProducts() {
         pagination={{
           clickable: true,
         }}
+        breakpoints={{
+          0: {
+            slidesPerView: 2, // Mobile
+          },
+          640: {
+            slidesPerView: 2, // Small tablets
+          },
+          768: {
+            slidesPerView: 2, // Tablets
+          },
+          1024: {
+            slidesPerView: 4, // Desktop
+          },
+        }}
         navigation={true}
         modules={[FreeMode, Pagination, Navigation]}
         className="mySwiper"

@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <div className="min-h-screen h-full">
       {/* Header của trang chủ */}
-      <div className="grid grid-cols-12 gap-6 w-full">
-        <div className="col-span-3 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+        <div className="col-span-3 w-full hidden lg:block">
           <Categories />
         </div>
-        <div className="col-span-9 w-full">
+        <div className="col-span-1 md:col-span-9 w-full">
           <BannerSlider />
           <HeroDoubleCard />
         </div>
