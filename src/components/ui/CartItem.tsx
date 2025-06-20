@@ -27,7 +27,7 @@ const CartItem: React.FC<CartItemProps> = ({ dataCart }: CartItemProps) => {
         </div>
         <div className="flex flex-col items-start">
           <span className="w-[200px] truncate">{dataCart.nameProduct}</span>
-          <div>
+          <div className="flex items-center gap-2">
             <span className="text-amber-500">${dataCart.priceProduct}</span>
             <span className="text-gray-400 line-through">${dataCart.priceOldProduct}</span>
           </div>
