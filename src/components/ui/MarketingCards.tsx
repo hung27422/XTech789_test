@@ -15,10 +15,10 @@ function MarketingCards({ imageUrl, subtitle, title }: MarketingCardsProps) {
         fill
         priority
       />
-      <div className="absolute z-20 inset-0 flex flex-col items-start justify-center text-black text-2xl pl-10">
+      <div className="absolute z-20 inset-0 flex flex-col items-start justify-center text-black text-xl pl-10">
         <span className="font-semibold">{title}</span>
         <span className="font-bold my-4">{subtitle}</span>
-        <span className="border-4 border-amber-400 px-4 py-2 rounded-md hover:bg-amber-400 hover:text-white cursor-pointer hover:px-4 hover:py-2 transition-all duration-300 font-semibold">
+        <span className="border-2 border-amber-400 px-4 py-2 rounded-md hover:bg-amber-400 hover:text-white cursor-pointer hover:px-4 hover:py-2 transition-all duration-300 font-semibold">
           Shop Now
         </span>
       </div>

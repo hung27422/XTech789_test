@@ -28,7 +28,7 @@ export default function SliderMostPopularProducts() {
         className="mySwiper"
       >
         {products.map((product) => (
-          <SwiperSlide key={product.id} className="text-center mx-auto p-4">
+          <SwiperSlide key={product.id} className="text-center mx-auto p-4 mb-5">
             <ProductItemCard product={product} />
           </SwiperSlide>
         ))}
